@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Connect Four</title>
+    <!--Website icon-->
+    <link rel="shortcut icon" type="image/png" href="icon.png">
+
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet">
+
+    <!--Tailwind css and style sheet-->
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"/>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: black;
+        }
+
+        canvas {
+            display: block;
+        }
+
+        #title, #gameovertxt{
+            font-family: 'Major Mono Display', monospace; 
+            color: brown;
+        }
+
+        #instruction {
+            font: bolder;
+            font-family: 'Cabin Sketch', cursive;
+        }
+
+        #startGameBtn, #instBtn{
+            font-family: 'Cabin Sketch', cursive; 
+            font: bold; 
+            background-color: brown; 
+            color: gold;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- adding a UI panel to display the score and the start button -->
+    <div class="absolute inset-0 flex justify-center items-center z-10" id="modalEl">
+        <div class="max-w-md w-full p-6 text-center rounded-2xl" style="background-color: thistle;">
+
+            <h1 class="text-4xl font-bold select-none" id="title">CONNECT FOUR</h1>              
+
+            <p class="py-1 text-xl select-none" id="instruction">
+                Form the first horizontal, vertical or diagonal line of four disc before the bot<br>
+                <br>How to Play?
+                <br>Click the empty disc to claim your spot
+                <br>The border of the game board changes color according to ones turn
+                <br> Player => Yellow
+                <br>Bot => Red
+            </p>
+
+            <div id="textholder" style="display: none;">
+                <p class="text-4xl font-bold select-none" id="gameovertxt"></p>
+            </div>
+
+            <button class="w-full py-1 rounded-full text-lg select-none focus:outline-none" id="startGameBtn">S t a r t</button>
+
+            <button class="w-full rounded-full text-lg select-none py-1 mt-2 focus:outline-none" id="instBtn" style="display: none;">I n s t r u c t i o n s</button>
+        </div>
+    </div>
+
+    <canvas></canvas>
+    <script src="script.js"></script>
+</body>
+
+</html>
